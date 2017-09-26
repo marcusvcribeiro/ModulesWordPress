@@ -1,0 +1,38 @@
+/* ===================================== /
+/  =Mixins /
+/ ===================================== */
+
+$the-radius : 5px;
+
+@mixin the-rounded($radius1: $the-radius ,$radius2: $the-radius ,$radius3: $the-radius ,$radius4: $the-radius){
+  
+ -webkit-border-top-left-radius: $radius1;
+ -webkit-border-top-right-radius: $radius2;
+ -webkit-border-bottom-right-radius: $radius3;
+ -webkit-border-bottom-left-radius: $radius4;
+ -moz-border-radius-topleft: $radius1;
+ -moz-border-radius-topright: $radius2;
+ -moz-border-radius-bottomright: $radius3;
+ -moz-border-radius-bottomleft: $radius4;
+ border-top-left-radius: $radius1;
+ border-top-right-radius: $radius2;
+ border-bottom-right-radius: $radius3;
+ border-bottom-left-radius: $radius4;
+  
+}
+
+@mixin the-hover($start-color: $color1, $hover-color: $color2, $decoration: $deco ) {
+	color: $start-color;
+	text-decoration: none;
+	&:hover {
+		color: $hover-color;
+		text-decoration: $decoration;
+	}
+}
+
+@mixin the-gradient($position, $color1, $color2) {
+	background-image: -webkit-linear-gradient(to $position, $color1, $color2);
+	background-image: -moz-linear-gradient(to $position, $color1, $color2);
+	background-image: -o-linear-gradient(to $position, $color1, $color2);
+	background-image: linear-gradient(to $position, $color1, $color2);
+}
